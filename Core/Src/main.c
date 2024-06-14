@@ -99,7 +99,7 @@ int main(void)
 
   /* Start scheduler */
   osKernelStart();
-  Hal_GPIO_Write();
+  
   /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */

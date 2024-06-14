@@ -124,7 +124,13 @@ __weak void LEDTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    HAL_GPIO_WritePin(LED3_GPIO_Port,LED3_Pin,SET);
+    vTaskDelay(100);
+    HAL_GPIO_WritePin(LED4_GPIO_Port,LED4_Pin,SET);
+    HAL_GPIO_WritePin(LED3_GPIO_Port,LED3_Pin,RESET);
+    vTaskDelay(100);
+    HAL_GPIO_WritePin(LED4_GPIO_Port,LED4_Pin,RESET);
+
   }
   /* USER CODE END LEDTask */
 }
